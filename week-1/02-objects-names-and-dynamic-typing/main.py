@@ -1,7 +1,8 @@
 def main():
     x = 10
-    print(type(x))
+    y = x
     print(id(x))
+    print(id(y))
 
 if __name__ == "__main__":
     main()
