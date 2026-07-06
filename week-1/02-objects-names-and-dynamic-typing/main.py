@@ -17,5 +17,17 @@ def main():
 def add_item(items):
     items.append("AI")
 
+def mini_challenge():
+    numbers = [1, 2] # binds list to numbers
+
+    alias = numbers # binds alias to the same list object
+
+    numbers.append(3) # mutates the shared list object -> [1, 2, 3]
+
+    alias = [100] # alias was changed to rebind new list object
+
+    print(numbers) # [1, 2, 3]
+    print(alias) # [100]
+
 if __name__ == "__main__":
     main()
