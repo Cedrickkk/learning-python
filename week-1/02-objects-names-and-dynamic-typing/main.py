@@ -14,6 +14,10 @@ def main():
     add_item(my_list)
     print(my_list)
 
+    test = [1,2,3]
+    test = test.append(4) # points to None since append returns 'None'
+    print(test)
+
 def add_item(items):
     items.append("AI")
 
