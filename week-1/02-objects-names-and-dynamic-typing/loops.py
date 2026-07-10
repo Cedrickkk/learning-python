@@ -14,6 +14,8 @@ def main():
     print(numbers)
     print(list(numbers))
 
+    exercise_2()
+
 def exercise_1():
     numbers = [[1], [2], [3]]
 
@@ -21,6 +23,12 @@ def exercise_1():
         number.append(100)
 
     print(numbers)
+
+def exercise_2():
+    names = ["Cedrick", "Alice", "Bob"]
+
+    for i, name in enumerate(names):
+        print(f"{i + 1}. {name}")
 
 if __name__ == '__main__':
     main()
