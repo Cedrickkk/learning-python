@@ -1,21 +1,25 @@
+from random import choice
 import collections
 
 def main() -> None:
-    beer_card = Card('7', 'diamonds')
-    print(beer_card)
-
     deck = FrenchDeck()
+    Card('A', 'diamonds') in deck
+
+    for card in sorted(deck, key=spades_high):
+        print(card)
+
+def spades_high(card):
+    suit_values = dict(spades=3, hearts=2, diamonds=1, clubs=0)
+    rank_value = FrenchDeck.ranks.index(card.rank)
+    return rank_value * len(suit_values) + suit_values[card.suit]
 
 Card = collections.namedtuple('Card', ['rank', 'suit'])
-
 class FrenchDeck:
     ranks = [str(n) for n in range(2, 11)] + list('JQKA')
     suits = 'spades diamonds clubs hearts'.split()
 
     def __init__(self):
         self._cards = [Card(rank, suit) for suit in self.suits for rank in self.ranks]
-        print(self.ranks)
-        print(self.suits)
 
     def __len__(self):
         return len(self._cards)
